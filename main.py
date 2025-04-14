@@ -397,6 +397,13 @@ if __name__ == "__main__":
     print("quantization time:", time.time() - tick, "s")
     print(model)
 
+    if args.save:
+        average_bits = int(args.precisions[-9:-7])/8
+        saving_path = args.saving_path + f"Mixtral-8x7B-v0.1-atten_{args.attn_bits}-e_{average_bits}"
+        tokenizer = AutoTokenizer.from_pretrained(args.model)
+        tokenizer.save_pretrained(saving_path)
+        from utils.pack import save_quantized
+        save_quantized(model, saving_path)
     if args.eval_ppl:
         for dataset in ["wikitext2", "c4", "ptb"]:
             dataloader, testloader = get_loaders(
@@ -407,10 +414,3 @@ if __name__ == "__main__":
             t1 = time.time()
             llama_eval(model, testloader, device, dataset)
             print("Time: ", time.time() - t1)
-    if args.save:
-        average_bits = int(args.precisions[-9:-7])/8
-        saving_path = args.saving_path + f"Mixtral-8x7B-v0.1-atten_{args.attn_bits}-e_{average_bits}"
-        tokenizer = AutoTokenizer.from_pretrained(args.model)
-        tokenizer.save_pretrained(saving_path)
-        from utils.pack import save_quantized
-        save_quantized(model, saving_path)

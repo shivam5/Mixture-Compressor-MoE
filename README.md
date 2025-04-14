@@ -3,6 +3,8 @@ git clone https://github.com/Aaronhuang-778/Mixture-Compressor-MoE.git
 cd Mixture-Compressor-MoE
 
 cd /home/hice1/smittal98/scratch/Mixture-Compressor-MoE
+cd /home/vimagupta123/shivam/Mixture-Compressor-MoE
+
 conda create --prefix=mixture_compressor python=3.10 -y
 conda activate ./mixture_compressor
 
