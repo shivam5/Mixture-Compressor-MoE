@@ -1,3 +1,19 @@
+```sh
+git clone https://github.com/Aaronhuang-778/Mixture-Compressor-MoE.git
+cd Mixture-Compressor-MoE
+
+cd /home/hice1/smittal98/scratch/Mixture-Compressor-MoE
+conda create --prefix=mixture_compressor python=3.10 -y
+conda activate ./mixture_compressor
+
+conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install tqdm
+pip install gurobipy
+conda install --file requirements.txt
+
+```
+
+
 <p align="center" width="10%">
 <img src="imgs/logo.png" style="width: 30%" align=center> 
 </p>
