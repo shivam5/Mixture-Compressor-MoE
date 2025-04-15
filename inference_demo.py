@@ -10,7 +10,7 @@ torch.cuda.is_available()
 kwargs = {"device_map": 'auto',
           "torch_dtype": "torch.float16"}
 ######## Input your save_dir of quantized model########
-save_dir = ""
+save_dir = "/home/vimagupta123/.cache/huggingface/hub/models--mistralai--Mixtral-8x7B-v0.1-2.5bMixtral-8x7B-v0.1-atten_4-e_2.5/"
 
 model = load_quantized_model(save_dir, kwargs)
 
