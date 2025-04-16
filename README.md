@@ -12,7 +12,12 @@ conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=
 conda install tqdm
 pip install gurobipy
 conda install --file requirements.txt
+```
 
+Adjust the paths in the scripts and run:
+```sh
+bash scripts/quant.sh
+python inference_demo.py
 ```
 
 
